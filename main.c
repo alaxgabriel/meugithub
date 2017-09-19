@@ -78,6 +78,7 @@ int main(void){
 
 	//função que apaga o bloco de memória que havia sido alocado
 	free(x);
+	//será?
 
 	return 0;
 
