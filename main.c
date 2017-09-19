@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-//função de comparação que é necessário para implementação da função qsort();
+//consegui?
+//funÃ§Ã£o de comparaÃ§Ã£o que Ã© necessÃ¡rio para implementaÃ§Ã£o da funÃ§Ã£o qsort();
 int comparar(const void *a, const void *b){
-    //caso os parâmetros a e b sejam iguais, a função retorna 0;
+    //caso os parÃ¢metros a e b sejam iguais, a funÃ§Ã£o retorna 0;
     if (*(float*)a == *(float*)b)
         return 0;
-    //caso o a seja maior que o b, a função retorna 1;
-    //do contrário, retorna -1;
+    //caso o a seja maior que o b, a funÃ§Ã£o retorna 1;
+    //do contrÃ¡rio, retorna -1;
     else
         if(*(float*)a > *(float*)b)
             return 1;
@@ -16,9 +16,10 @@ int comparar(const void *a, const void *b){
             return -1;
 }
 
-//função para imprimir os arrays;
+//funÃ§Ã£o para imprimir os arrays;
 void printar(float *x, int n){
-    int i;
+
+	int i;
     for(i=0; i<n; i++){
         printf("\n%f\n", x[i]);
 	}
@@ -38,23 +39,23 @@ int main(void){
 	//scanf("%i", &n);
     //printf("\n");
 
-    //nesse momento, ocorre uma alocação na memória; em que um bloco de memória de dados do tipo float será
+    //nesse momento, ocorre uma alocaÃ§Ã£o na memÃ³ria; em que um bloco de memÃ³ria de dados do tipo float serÃ¡
     //criado, com tamanho equivalente ao tamanho do seu tipo em bytes.
-    //o endereço do primeiro conteúdo do bloco de memória é armaxenado em x.
+    //o endereÃ§o do primeiro conteÃºdo do bloco de memÃ³ria Ã© armaxenado em x.
 	x = (float*) malloc(n*sizeof(float));
 
 	for(i=0; i<n; i++){
         x[i] = rand() % n + 1;
     }
 
-    //laço que preenche o bloco de memória alocado
+    //laÃ§o que preenche o bloco de memÃ³ria alocado
 	/*for(i=0; i<n; i++){
         printf("Digite o %i: ", i);
         scanf("%f", &x[i]);
         printf("\n");
 	}*/
 
-    //chamada da funçaõ que colocará os dados do bloco de meória em ordem.
+    //chamada da funÃ§aÃµ que colocarÃ¡ os dados do bloco de meÃ³ria em ordem.
 	//qsort(x, n, sizeof(float), comparar);
 //	qsort(x, n, sizeof(float), comparar);
 
@@ -71,12 +72,12 @@ int main(void){
     printf("\nTempo: %f", ((float)time)/CLOCKS_PER_SEC);
     printf(" segundos\n");
 
-	//chamada da função que exibirá os dados do bloco de memória alocado, já com os conteúdos na forma ordenada
+	//chamada da funÃ§Ã£o que exibirÃ¡ os dados do bloco de memÃ³ria alocado, jÃ¡ com os conteÃºdos na forma ordenada
 	//printar(x, n);
 
 
 
-	//função que apaga o bloco de memória que havia sido alocado
+	//funÃ§Ã£o que apaga o bloco de memÃ³ria que havia sido alocado
 	free(x);
 
 	return 0;
